@@ -7,17 +7,17 @@ int main(){
     char  login[100];
     char  email[100];
     char senha[100];
-    
+   // declarando os itens dentro de cliente. 
     struct Cliente{
     char  nome[100];
     char  login[100];
     char  email[100];
     char senha[100];
     };
-    
+    //informando a quantidade de clientes 
     struct Cliente clientes[100];
     
-    //linha de comando para scanf
+    //linha de cadastro
     
     printf(" Cadastro\n");
     
@@ -33,7 +33,8 @@ int main(){
     printf("Senha:");
     fgets(clientes[0]. senha, 100, stdin);
     
-    printf("CONFIRME OS DADOS: %s", clientes[0].login);
+    // confirmacao da dados preenchidos 
+    printf("CONFIRME OS DADOS:\nnome: %s\nlogin: %s\nemail: %s\nsenha: %s\n", clientes[0].nome, clientes[0].login, clientes[0].email, clientes[0].senha);
     
     
     
