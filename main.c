@@ -1,55 +1,64 @@
 //declaração das bibliotecas
 #include <stdio.h>
 #include <string.h>
-//declaração das variáveis 
+
+struct Cliente {
+    char   nome[20];
+     char  login[20];
+     char  email[20];
+    char   senha[20];
+   };
+
+struct Cliente clientes[10];
+
+    void mostrarCliente ( struct Cliente clientes){
+     printf("\nCONFIRME OS DADOS:\n");
+printf(" nome: %s", clientes.nome);
+        
+printf(" login: %s", clientes.login);
+        
+printf(" email: %s", clientes.email);
+        
+printf(" senha: %s", clientes.senha);        
+        
+    }
+
 int main(){
-    char  nome[100];
-    char  login[100];
-    char  email[100];
-    char senha[100];
-   // declarando os itens dentro de cliente. 
-    struct Cliente{
-    char  nome[100];
-    char  login[100];
-    char  email[100];
-    char senha[100];
-    };
-    //informando a quantidade de clientes 
-    struct Cliente clientes[100];
+//declaracao das variaveis
+    int opcao;
     
-    //linha de cadastro
+//entrada de dados
+  do {
+       
     
-    printf(" Cadastro\n");
+    printf(" \nInforme seus dados!\n");
     
     printf("Nome:");
-    fgets(clientes[0]. nome, 100, stdin);
-    
+    fgets(clientes[0].nome, 20, stdin);
     printf("Login:");
-    fgets(clientes[0]. login, 100, stdin);
-    
-    printf("Email:");
-    fgets(clientes[0]. email, 100, stdin);
-    
-    printf("Senha:");
-    fgets(clientes[0]. senha, 100, stdin);
-    
-    // confirmacao da dados preenchidos 
-    printf("CONFIRME OS DADOS:\nnome: %s\nlogin: %s\nemail: %s\nsenha: %s\n", clientes[0].nome, clientes[0].login, clientes[0].email, clientes[0].senha);
+    fgets(clientes[0].login, 20, stdin);
+    printf(" Email:");
+    fgets(clientes[0].email, 20, stdin);
+    printf(" senha:");
+    fgets(clientes[0].senha, 20, stdin);
     
     
+    mostrarCliente (clientes[0]);
+  
+        printf("\nConfirmar: [1]");
+        printf("\nEditar: [2]\n");
+        scanf("%d",&opcao);
+      getchar();
+      
+    switch (opcao){
+    case 1:
+    case 2:
+       
+        default:
+    }
+  }
+      while (opcao ==2);
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    return 0;
+  
+  return 0;
 }
