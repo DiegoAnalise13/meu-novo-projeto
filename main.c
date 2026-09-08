@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+
+//declarando o modelo cliente.
 struct Cliente {
     char   nome[20];
      char  login[20];
@@ -9,6 +11,7 @@ struct Cliente {
     char   senha[20];
    };
 
+//declarando array clientes com espaço para 10 clientes.
 struct Cliente clientes[10];
 
     void mostrarCliente ( struct Cliente clientes){
@@ -24,13 +27,13 @@ printf(" senha: %s", clientes.senha);
     }
 
 int main(){
-//declaracao das variaveis
+//declarando as variáveis
     int opcao;
     
-//entrada de dados
+// declarando do while
   do {
        
-    
+    // declarando entrada de dados
     printf(" \nInforme seus dados!\n");
     
     printf("Nome:");
@@ -42,14 +45,14 @@ int main(){
     printf(" senha:");
     fgets(clientes[0].senha, 20, stdin);
     
-    
+    //declarando comando para exibir os dados inseridos
     mostrarCliente (clientes[0]);
-  
+  //declarando a exibição das opções do switch
         printf("\nConfirmar: [1]");
         printf("\nEditar: [2]\n");
         scanf("%d",&opcao);
       getchar();
-      
+      //declarando a estrutura switch
     switch (opcao){
     case 1:
     case 2:
@@ -57,9 +60,9 @@ int main(){
         default:
     }
   }
+    //fechando a estrutura do while
       while (opcao ==2);
     
   
   return 0;
 }
-//testa git 1.
