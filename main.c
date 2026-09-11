@@ -29,6 +29,15 @@ printf(" senha: %s", clientes.senha);
 int main(){
 //declarando as variáveis
     int opcao;
+    int nomeValido;
+    int nomeInvalido;
+    int contador;
+    int i;
+    
+    nomeValido =1;
+    nomeInvalido =0;
+    contador = 0;
+    i = 0;
     
 // declarando do while
   do {
@@ -44,8 +53,10 @@ int main(){
     fgets(clientes[0].email, 20, stdin);
     printf(" senha:");
     fgets(clientes[0].senha, 20, stdin);
-    
-    //declarando comando para exibir os dados inseridos
+    //verificando se o nome tem espaço.
+          if (strchr(clientes[0].nome,' ')!= NULL){
+      
+    //exibindo os dados para confirmação
     mostrarCliente (clientes[0]);
   //declarando a exibição das opções do switch
         printf("\nConfirmar: [1]");
@@ -60,9 +71,22 @@ int main(){
         default:
     }
   }
-    //fechando a estrutura do while
-      while (opcao ==2);
+      //tratando nome que não tem espaço
+      else {
+         printf("\nNome invalido\n");
+          
+      }     
+      
+  }
+
     
+    
+
+    
+    //// repetindo o cadastro enquanto a opção for editar ou o nome estiver inválido
+      while (opcao ==2 ||nomeInvalido ==0);
+      
   
+    
   return 0;
 }
