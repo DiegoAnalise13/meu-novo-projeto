@@ -29,15 +29,13 @@ printf(" senha: %s", clientes.senha);
 int main(){
 //declarando as variáveis
     int opcao;
-    int nomeValido;
-    int nomeInvalido;
-    int contador;
-    int i;
+    int nomeValido1;
+    int nomeValido2;
+    char *espaco;
+    char *enter;
     
-    nomeValido =1;
-    nomeInvalido =0;
-    contador = 0;
-    i = 0;
+    nomeValido1 =1;
+    nomeValido2 =0;
     
 // declarando do while
   do {
@@ -47,14 +45,24 @@ int main(){
     
     printf("Nome:");
     fgets(clientes[0].nome, 20, stdin);
+      //procurando espaço
+      espaco = strchr(clientes[0].nome,' ');
+      //analiando o \n do fgets
+      enter = strchr(clientes[0].nome,'\n');
+      
+      if (enter != NULL) {
+          *enter ='\0';
+      }
+    //adicionando condições para nome ser valido.
+      if (espaco && *(espaco -1) && *(espaco +1)){
+      
+          
     printf("Login:");
     fgets(clientes[0].login, 20, stdin);
     printf(" Email:");
     fgets(clientes[0].email, 20, stdin);
     printf(" senha:");
     fgets(clientes[0].senha, 20, stdin);
-    //verificando se o nome tem espaço.
-          if (strchr(clientes[0].nome,' ')!= NULL){
       
     //exibindo os dados para confirmação
     mostrarCliente (clientes[0]);
@@ -69,22 +77,19 @@ int main(){
     case 2:
        
         default:
-    }
+   }
   }
       //tratando nome que não tem espaço
-      else {
-         printf("\nNome invalido\n");
+     else {
+         printf("\nNome invalido\n"); 
           
-      }     
       
+     }  
   }
-
     
     
-
-    
-    //// repetindo o cadastro enquanto a opção for editar ou o nome estiver inválido
-      while (opcao ==2 ||nomeInvalido ==0);
+    // repetindo o cadastro enquanto a opção for editar ou o nome estiver inválido
+      while (opcao ==2 || nomeValido2 ==0);
       
   
     
